@@ -18,6 +18,7 @@ int main(int argc, char const *argv[])
         cout << "2. Crear VideoJuego " << endl;
         cout << "3. Asignar VideoJuego a Categoria" << endl;
         cout << "4. Ver Lista Categorias" << endl;
+        cout << "5. Mostras fechas de lanzamiento por categoria" << endl;
         cin >> opcion;
 
         switch (opcion)
@@ -86,6 +87,16 @@ int main(int argc, char const *argv[])
             for (Categoria *categoria : categorias)
             {
                 categoria->showCategoria();
+            }
+            break;
+        case 5:
+            for (Categoria *categoria : categorias)
+            {
+                cout << "Categoria :" << categoria->getNombre() << endl;
+                for (VideoJuego *videoJuego : videoJuegos)
+                {
+                    cout << "Fecha Lanzamiento: " << videoJuego->getAnoLanzamiento() << endl;
+                }
             }
             break;
         default:
